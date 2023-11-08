@@ -1,0 +1,61 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  height: 500px;
+  width: 400px;
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.calculator {
+  border: solid;
+}
+
+
+/*^ Top Styling  */
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+#branding {
+  
+}
+#solarPanel {
+
+}
+
+
+
+
+/*^ Screen Styling  */
+.screen {
+  height: 100px;
+  width: 80%;
+  border: solid;
+  background-color: lightgrey;
+  margin: 0 auto;
+}
+
+/*^ Button Styling  */
+.buttonContainer {
+  padding: 10px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+button {
+  height: 60px;
+
+}
