@@ -23,13 +23,13 @@ main {
 }
 
 
-/*^ Top Styling  */
+/*^ Top Styling */
 .top {
   display: flex;
   justify-content: space-between;
 }
 #branding {
-  
+
 }
 #solarPanel {
 
@@ -38,7 +38,7 @@ main {
 
 
 
-/*^ Screen Styling  */
+/*^ Screen Styling */
 .screen {
   height: 100px;
   width: 80%;
@@ -47,7 +47,7 @@ main {
   margin: 0 auto;
 }
 
-/*^ Button Styling  */
+/*^ Button Styling */
 .buttonContainer {
   padding: 10px;
   display: grid;
