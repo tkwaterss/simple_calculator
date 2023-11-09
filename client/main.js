@@ -1,30 +1,62 @@
-const characters = document.querySelectorAll('.charButton');
-const evaluate = document.querySelector('#equal');
+const characters = document.querySelectorAll(".charButton");
+const evaluate = document.querySelector("#equal");
+const display = document.querySelector("#display");
 
-let inputs = []
+let inputs = [];
 
-const logValue = event => {
-  console.log(event.target.innerHTML);
+const logValue = (event) => {
   inputs.push(event.target.innerHTML);
-  console.log(inputs)
-}
+  display.innerText = inputs.join(" ");
+};
 
 const evaluateInputs = () => {
-  console.log(inputs);
-  let numbers = []
-  let evaluators = []
-  for (let i = 0; i < inputs.length; i++) {
-    console.log(+inputs[i])
-    if (+inputs[i] || inputs[i] === '.') {
-      console.log('this is a number');
+  let operators = ["+", "-", "x", "/"];
+  let currentNumber = [];
+  let result = [];
+
+  while (inputs.length > 0) {
+    if (!operators.includes(inputs[0])) {
+      currentNumber.push(inputs[0]);
+      inputs.shift();
     } else {
-      console.log('this is an operator');
+      result.push(currentNumber.join(""));
+      result.push(inputs[0]);
+      inputs.shift();
+      currentNumber = [];
     }
   }
-}
+  result.push(currentNumber.join(""));
+  console.log(result);
 
-evaluate.addEventListener('click', evaluateInputs)
+  while (result.length > 1) {
+    if (result.includes("x")) {
+      let index = result.indexOf("x");
+      let newNumber = +result[index - 1] * +result[index + 1];
+      result.splice(index - 1, 3, newNumber);
+    } else if (result.includes("/")) {
+      let index = result.indexOf("/");
+      let newNumber = +result[index - 1] / +result[index + 1];
+      result.splice(index - 1, 3, newNumber);
+    } else if (result.includes("+")) {
+      let index = result.indexOf("+");
+      let newNumber = +result[index - 1] + +result[index + 1];
+      result.splice(index - 1, 3, newNumber);
+    } else if (result.includes("-")) {
+      let index = result.indexOf("-");
+      let newNumber = +result[index - 1] - +result[index + 1];
+      result.splice(index - 1, 3, newNumber);
+    }
+    console.log(result);
+  }
+
+  console.log(result);
+
+  display.innerText = result;
+  inputs = [];
+};
+
+evaluate.addEventListener("click", evaluateInputs);
 
 for (let i = 0; i < characters.length; i++) {
-  characters[i].addEventListener('click', logValue);
+  characters[i].addEventListener("click", logValue);
 }

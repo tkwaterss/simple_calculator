@@ -45,6 +45,12 @@ main {
   border: solid;
   background-color: lightgrey;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 30px;
 }
 
 /*^ Button Styling */
