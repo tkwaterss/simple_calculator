@@ -9,29 +9,42 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #F0F0F0;
 }
 main {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   height: 500px;
   width: 400px;
-  background-color: grey;
+  background-color: #085299;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-.calculator {
-  border: solid;
+  border-radius: 8px;
+  border: solid 2px rgba(121, 121, 121, 0.534);
+  box-shadow: 5px 5px 10px 1px grey;
 }
 
 
 /*^ Top Styling */
 .top {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
 }
 #branding {
-
+  
 }
 #solarPanel {
+  height: 40px;
+  width: 150px;
+  display: flex;
+  background-color: rgb(39, 39, 39);
+
+}
+.solarBlock {
+  border: solid 1.5px rgb(68, 68, 68);
+  width: 30px;
 
 }
 
@@ -49,13 +62,12 @@ main {
   align-items: center;
   justify-content: end;
   padding: 20px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 30px;
 }
 
 /*^ Button Styling */
 .buttonContainer {
-  padding: 10px;
+  padding: 0 20px 20px 20px;
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(4, 1fr);

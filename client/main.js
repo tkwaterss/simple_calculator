@@ -26,8 +26,8 @@ const evaluateInputs = () => {
     }
   }
   result.push(currentNumber.join(""));
-  console.log(result);
-
+  
+  //TODO May need to elaborate on order of operations
   while (result.length > 1) {
     if (result.includes("x")) {
       let index = result.indexOf("x");
@@ -46,10 +46,7 @@ const evaluateInputs = () => {
       let newNumber = +result[index - 1] - +result[index + 1];
       result.splice(index - 1, 3, newNumber);
     }
-    console.log(result);
   }
-
-  console.log(result);
 
   display.innerText = result;
   inputs = [];
